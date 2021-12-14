@@ -44,18 +44,25 @@ function compareSelection() {
   const computerValue = getComputerSelection();
 
   if (userValue === computerValue) {
+    notification.innerHTML = "Empate";
     console.log("Hay empate");
   } else if (userValue === "Papel" && computerValue === "Piedra") {
+    notification.innerHTML = "¡Has ganado!";
     console.log("Gana el Usuario");
   } else if (userValue === "Piedra" && computerValue === "Papel") {
+    notification.innerHTML = "Has perdido";
     console.log("Gana el Ordenador");
   } else if (userValue === "Tijera" && computerValue === "Papel") {
+    notification.innerHTML = "¡Has ganado!";
     console.log("Gana el Usuario");
   } else if (userValue === "Papel" && computerValue === "Tijera") {
+    notification.innerHTML = "Has perdido";
     console.log("Gana el Ordenador");
   } else if (userValue === "Piedra" && computerValue === "Tijera") {
+    notification.innerHTML = "¡Has ganado!";
     console.log("Gana el Usuario");
   } else if (userValue === "Tijera" && computerValue === "Piedra") {
+    notification.innerHTML = "Has perdido";
     console.log("Gana el Ordenador");
   }
 }
