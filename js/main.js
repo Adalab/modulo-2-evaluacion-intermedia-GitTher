@@ -14,6 +14,8 @@ const notification = document.querySelector(".js_notification");
 
 let gameCounter = 0;
 
+const resetBtn = document.querySelector(".js_user__selector--reset");
+
 // Funciones
 
 function getRandomNumber(max) {
@@ -85,10 +87,10 @@ function compareSelection() {
 
 function countGames() {
   gameCounter = gameCounter + 1;
-  console.log(gameCounter);
 
   if (gameCounter === 10) {
-    window.location.reload();
+    playBtn.classList.add("hidden");
+    resetBtn.classList.remove("hidden");
   }
 }
 
@@ -97,7 +99,12 @@ function handleClickUpdate(event) {
   compareSelection();
   countGames();
 }
+function handleReset(event) {
+  event.preventDefault();
+  window.location.reload();
+}
 
 // Listeners
 
 playBtn.addEventListener("click", handleClickUpdate);
+resetBtn.addEventListener("click", handleReset);
