@@ -6,9 +6,9 @@ const userSelection = document.querySelector(".js_user__selector");
 
 const playBtn = document.querySelector(".js_user__selector--button");
 
-const userTotal = document.querySelector(".js_score__user--total");
+let userScore = document.querySelector(".js_score__user--total");
 
-const computerTotal = document.querySelector(".js_score__computer--total");
+let computerScore = document.querySelector(".js_score__computer--total");
 
 const notification = document.querySelector(".js_notification");
 
@@ -42,27 +42,41 @@ function getComputerSelection() {
 function compareSelection() {
   const userValue = userSelection.value;
   const computerValue = getComputerSelection();
+  const userTotal = parseInt(userScore.innerHTML);
+  const computerTotal = parseInt(computerScore.innerHTML);
 
   if (userValue === computerValue) {
     notification.innerHTML = "Empate";
     console.log("Hay empate");
   } else if (userValue === "Papel" && computerValue === "Piedra") {
     notification.innerHTML = "¡Has ganado!";
+    const resultTotal = userTotal + 1;
+    userScore.innerHTML = resultTotal;
     console.log("Gana el Usuario");
   } else if (userValue === "Piedra" && computerValue === "Papel") {
     notification.innerHTML = "Has perdido";
+    const resultTotal = computerTotal + 1;
+    computerScore.innerHTML = resultTotal;
     console.log("Gana el Ordenador");
   } else if (userValue === "Tijera" && computerValue === "Papel") {
     notification.innerHTML = "¡Has ganado!";
+    const resultTotal = userTotal + 1;
+    userScore.innerHTML = resultTotal;
     console.log("Gana el Usuario");
   } else if (userValue === "Papel" && computerValue === "Tijera") {
     notification.innerHTML = "Has perdido";
+    const resultTotal = computerTotal + 1;
+    computerScore.innerHTML = resultTotal;
     console.log("Gana el Ordenador");
   } else if (userValue === "Piedra" && computerValue === "Tijera") {
     notification.innerHTML = "¡Has ganado!";
+    const resultTotal = userTotal + 1;
+    userScore.innerHTML = resultTotal;
     console.log("Gana el Usuario");
   } else if (userValue === "Tijera" && computerValue === "Piedra") {
     notification.innerHTML = "Has perdido";
+    const resultTotal = computerTotal + 1;
+    computerScore.innerHTML = resultTotal;
     console.log("Gana el Ordenador");
   }
 }
