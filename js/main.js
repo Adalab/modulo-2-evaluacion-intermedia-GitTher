@@ -12,6 +12,8 @@ let computerScore = document.querySelector(".js_score__computer--total");
 
 const notification = document.querySelector(".js_notification");
 
+let gameCounter = 0;
+
 // Funciones
 
 function getRandomNumber(max) {
@@ -81,10 +83,19 @@ function compareSelection() {
   }
 }
 
+function countGames() {
+  gameCounter = gameCounter + 1;
+  console.log(gameCounter);
+
+  if (gameCounter === 10) {
+    window.location.reload();
+  }
+}
+
 function handleClickUpdate(event) {
   event.preventDefault();
-
   compareSelection();
+  countGames();
 }
 
 // Listeners
