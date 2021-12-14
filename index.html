@@ -4,46 +4,59 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Vollkorn:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/main.css" />
     <title>Piedra, papel, tijera</title>
   </head>
   <body>
-    <h1 class="title">Juego Piedra, Papel y Tijera</h1>
-    <form action="#" method="post">
-      <label for="user__selector">Introduce aquí tu jugada:</label>
-      <select
-        class="user__selector js_user__selector"
-        id="user__selector"
-        name="user__selector"
-      >
-        <option value="" disabled selected>Seleccione su jugada</option>
-        <option value="Piedra">Piedra</option>
-        <option value="Papel">Papel</option>
-        <option value="Tijera">Tijera</option>
-      </select>
-      <input
-        class="user__selector--button js_user__selector--button"
-        type="submit"
-        name="user__selector--button"
-        value="Jugar"
-      />
-      <input
-        class="user__selector--reset js_user__selector--reset hidden"
-        type="reset"
-        name="user__selector--reset"
-        value="Reiniciar Juego"
-      />
-    </form>
-    <h2 class="notification js_notification">¡Vamos a Jugar!</h2>
-    <div class="score">
-      <p class="score__user">
-        Jugador: <span class="score__user--total js_score__user--total">0</span>
-      </p>
-      <p class="score__computer">
-        Computadora:
-        <span class="score__computer--total js_score__computer--total">0</span>
-      </p>
-    </div>
+    <main class="main">
+      <h1 class="title">Juego Piedra, Papel y Tijera</h1>
+      <form action="#" method="post">
+        <label class="label" for="user__selector"
+          >Introduce aquí tu jugada:</label
+        >
+        <select
+          class="user__selector js_user__selector"
+          id="user__selector"
+          name="user__selector"
+        >
+          <option value="" disabled selected>Seleccione su jugada</option>
+          <option value="Piedra">Piedra</option>
+          <option value="Papel">Papel</option>
+          <option value="Tijera">Tijera</option>
+        </select>
+        <input
+          class="user__selector--button js_user__selector--button"
+          type="submit"
+          name="user__selector--button"
+          value="Jugar"
+        />
+        <input
+          class="user__selector--reset js_user__selector--reset hidden"
+          type="reset"
+          name="user__selector--reset"
+          value="Reiniciar Juego"
+        />
+      </form>
+      <h2 class="notification js_notification">¡Vamos a Jugar!</h2>
+      <div class="score">
+        <p class="score__user">
+          Jugador:
+          <span class="score__user--total js_score__user--total">0</span>
+        </p>
+        <p class="score__computer">
+          Computadora:
+          <span class="score__computer--total js_score__computer--total"
+            >0</span
+          >
+        </p>
+      </div>
+    </main>
     <script src="./js/main.js"></script>
   </body>
 </html>

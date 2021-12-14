@@ -1,3 +1,53 @@
 .hidden {
   display: none;
 }
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: "Vollkorn", serif;
+}
+
+.notification {
+  font-family: "Vollkorn", serif;
+}
+
+.label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.user__selector {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.user__selector--button,
+.user__selector--reset {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.score {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+.score__computer--total,
+.score__user--total {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
