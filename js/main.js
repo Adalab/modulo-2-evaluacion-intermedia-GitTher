@@ -6,9 +6,9 @@ const userSelection = document.querySelector(".js_user__selector");
 
 const playBtn = document.querySelector(".js_user__selector--button");
 
-let userScore = document.querySelector(".js_score__user--total");
+const userScore = document.querySelector(".js_score__user--total");
 
-let computerScore = document.querySelector(".js_score__computer--total");
+const computerScore = document.querySelector(".js_score__computer--total");
 
 const notification = document.querySelector(".js_notification");
 
