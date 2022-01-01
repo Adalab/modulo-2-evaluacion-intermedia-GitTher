@@ -16,6 +16,8 @@ let gameCounter = 0;
 
 const resetBtn = document.querySelector(".js_user__selector--reset");
 
+
+
 // Funciones
 
 function getRandomNumber(max) {
@@ -82,8 +84,9 @@ function compareSelection() {
     const resultTotal = computerTotal + 1;
     computerScore.innerHTML = resultTotal;
     console.log("Gana el Ordenador");
-  } else if (userValue === "")
+  } else if (userValue === "") {
     notification.innerHTML = "Por favor, selecciona tu jugada"
+  }
 }
 
 function countGames() {
@@ -95,8 +98,7 @@ function countGames() {
   }
 }
 
-function handleClickUpdate(event) {
-  event.preventDefault();
+function handleClickUpdate() {
   compareSelection();
   countGames();
 }
@@ -105,7 +107,17 @@ function handleReset(event) {
   window.location.reload();
 }
 
+function validateForm(event) {
+  const userValue = userSelection.value;
+  event.preventDefault();
+  if (userValue === "") {
+    notification.innerHTML = "Por favor, selecciona tu jugada"
+  } else {
+    handleClickUpdate();
+  }
+}
+
 // Listeners
 
-playBtn.addEventListener("click", handleClickUpdate);
+playBtn.addEventListener("click", validateForm);
 resetBtn.addEventListener("click", handleReset);
