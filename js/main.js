@@ -82,7 +82,8 @@ function compareSelection() {
     const resultTotal = computerTotal + 1;
     computerScore.innerHTML = resultTotal;
     console.log("Gana el Ordenador");
-  }
+  } else if (userValue === "")
+    notification.innerHTML = "Por favor, selecciona tu jugada"
 }
 
 function countGames() {
