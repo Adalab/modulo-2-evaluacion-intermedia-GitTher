@@ -6,9 +6,9 @@ const userSelection = document.querySelector(".js_user__selector");
 
 const playBtn = document.querySelector(".js_user__selector--button");
 
-const userScore = document.querySelector(".js_score__user--total");
+let userScore = 0;
 
-const computerScore = document.querySelector(".js_score__computer--total");
+let computerScore = 0;
 
 const notification = document.querySelector(".js_notification");
 
@@ -48,41 +48,35 @@ function getComputerSelection() {
 function compareSelection() {
   const userValue = userSelection.value;
   const computerValue = getComputerSelection();
-  const userTotal = parseInt(userScore.innerHTML);
+  // const userTotal = parseInt(userScore.innerHTML);
   const computerTotal = parseInt(computerScore.innerHTML);
 
   if (userValue === computerValue) {
-    notification.innerHTML = "Empate";
+    handleNotification('Empate');
     console.log("Hay empate");
   } else if (userValue === "Papel" && computerValue === "Piedra") {
-    notification.innerHTML = "¡Has ganado!";
-    const resultTotal = userTotal + 1;
-    userScore.innerHTML = resultTotal;
+    handleNotification('¡Has ganado!');
+    handleUserScore()
     console.log("Gana el Usuario");
   } else if (userValue === "Piedra" && computerValue === "Papel") {
-    notification.innerHTML = "Has perdido";
-    const resultTotal = computerTotal + 1;
-    computerScore.innerHTML = resultTotal;
+    handleNotification('Has perdido');
+    handlecomputerScore()
     console.log("Gana el Ordenador");
   } else if (userValue === "Tijera" && computerValue === "Papel") {
-    notification.innerHTML = "¡Has ganado!";
-    const resultTotal = userTotal + 1;
-    userScore.innerHTML = resultTotal;
+    handleNotification('¡Has ganado!');
+    handleUserScore()
     console.log("Gana el Usuario");
   } else if (userValue === "Papel" && computerValue === "Tijera") {
-    notification.innerHTML = "Has perdido";
-    const resultTotal = computerTotal + 1;
-    computerScore.innerHTML = resultTotal;
+    handleNotification('Has perdido');
+    handlecomputerScore()
     console.log("Gana el Ordenador");
   } else if (userValue === "Piedra" && computerValue === "Tijera") {
-    notification.innerHTML = "¡Has ganado!";
-    const resultTotal = userTotal + 1;
-    userScore.innerHTML = resultTotal;
+    handleNotification('¡Has ganado!');
+    handleUserScore()
     console.log("Gana el Usuario");
   } else if (userValue === "Tijera" && computerValue === "Piedra") {
-    notification.innerHTML = "Has perdido";
-    const resultTotal = computerTotal + 1;
-    computerScore.innerHTML = resultTotal;
+    handleNotification('Has perdido');
+    handlecomputerScore()
     console.log("Gana el Ordenador");
   } else if (userValue === "") {
     notification.innerHTML = "Por favor, selecciona tu jugada"
@@ -111,10 +105,26 @@ function validateForm(event) {
   const userValue = userSelection.value;
   event.preventDefault();
   if (userValue === "") {
-    notification.innerHTML = "Por favor, selecciona tu jugada"
+    handleNotification('Por favor, selecciona tu jugada');
   } else {
     handleClickUpdate();
   }
+}
+
+function handleNotification(message) {
+  notification.innerHTML = message;
+}
+
+function handleUserScore() {
+  userScore = userScore + 1;
+  const resultTotal = document.querySelector('.js_score__user--total');
+  resultTotal.innerHTML = userScore;
+}
+
+function handlecomputerScore() {
+  computerScore = computerScore + 1;
+  const resultTotal = document.querySelector('.js_score__computer--total');
+  resultTotal.innerHTML = computerScore;
 }
 
 // Listeners
